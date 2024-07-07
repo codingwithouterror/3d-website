@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>3D Bed with A-Frame</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        background: black;
+        overflow: hidden;
+      }
+      a-scene {
+        height: 100vh;
+        width: 100vw;
+      }
+    </style>
+  </head>
+  <body>
+    <a-scene>
+      <!-- Camera and light setup -->
+      <a-entity camera position="0 2 5"></a-entity>
+      <a-light type="ambient" color="#888"></a-light>
+      <a-light type="directional" color="#fff" intensity="0.6" position="-1 2 4"></a-light>
+
+      <!-- Bed model (simple representation using boxes) with rotation animation -->
+      <a-entity id="bed" position="0 0.5 -5" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear;">
+        <a-box position="0 0 0" depth="2" height="0.5" width="3" color="brown"></a-box>
+        <a-box position="0 0.5 0" depth="2" height="0.2" width="3" color="white"></a-box>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
